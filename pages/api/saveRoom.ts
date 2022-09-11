@@ -5,16 +5,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const client = await clientPromise;
 
+    const { id } = req.body;
     const data = await client
       .db("simple-cleaning-app")
       .collection("rooms")
-      .find()
-      .toArray();
-    const highestId = data.reduce(
-      (max, room) => (room.id > max ? room.id : max),
-      -1
-    );
-    res.send({ rooms: data, nextId: highestId + 1 });
+      .updateOne({ id }, { $set: req.body }, { upsert: true });
+    res.send(data);
   } catch (err) {
     res.status(500).send({ message: err.message });
   }

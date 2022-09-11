@@ -7,14 +7,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     const data = await client
       .db("simple-cleaning-app")
-      .collection("rooms")
+      .collection("tasks")
       .find()
       .toArray();
     const highestId = data.reduce(
-      (max, room) => (room.id > max ? room.id : max),
+      (max, task) => (task.id > max ? task.id : max),
       -1
     );
-    res.send({ rooms: data, nextId: highestId + 1 });
+    res.send({ tasks: data, nextId: highestId + 1 });
   } catch (err) {
     res.status(500).send({ message: err.message });
   }
