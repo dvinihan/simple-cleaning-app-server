@@ -4,6 +4,8 @@ export default async (req, res) => {
   try {
     const client = await clientPromise;
 
+    console.log("Connected to mongo client");
+
     const data = await client
       .db("simple-cleaning-app")
       .collection("rooms")
