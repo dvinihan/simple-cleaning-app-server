@@ -1,8 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { runCors } from "../../util/cors";
 import clientPromise from "../../util/mongodb";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    await runCors(req, res);
+
     const client = await clientPromise;
 
     const data = await client

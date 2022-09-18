@@ -166,11 +166,6 @@
   dependencies:
     tslib "^2.4.0"
 
-"@types/cors@^2.8.12":
-  version "2.8.12"
-  resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.12.tgz#6b2c510a7ad7039e98e7b8d3d6598f4359e5c080"
-  integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
-
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
@@ -1340,6 +1335,13 @@ next@12.3.0:
     "@next/swc-win32-arm64-msvc" "12.3.0"
     "@next/swc-win32-ia32-msvc" "12.3.0"
     "@next/swc-win32-x64-msvc" "12.3.0"
+
+nextjs-cors@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/nextjs-cors/-/nextjs-cors-2.1.1.tgz#153072b7837dbfd2480cd5509c58f338cc57969c"
+  integrity sha512-HxE4w4Wng5VdTtnn0DWPphuWKwd1Ty+lpyTZ/sQGgaNnd5demYMchKf+W1LtI8YFYxu2HnRb3MrxERRV0QKLKA==
+  dependencies:
+    cors "^2.8.5"
 
 object-assign@^4, object-assign@^4.1.1:
   version "4.1.1"
